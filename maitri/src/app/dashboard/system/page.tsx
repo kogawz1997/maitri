@@ -392,10 +392,10 @@ export default function SystemPage() {
             <SettingCard title="พื้นหลัง Sidebar" subtitle="ปรับแต่งลักษณะของแถบนำทางด้านข้าง" icon={Layers}>
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { id: 'default', label: 'ค่าเริ่มต้น', preview: 'bg-card border border-border' },
-                  { id: 'gradient', label: 'Gradient', preview: 'bg-gradient-to-b from-espresso to-[#1a1410]' },
-                  { id: 'image', label: 'รูปภาพโรงแรม', preview: 'bg-cover bg-center', style: { backgroundImage: `url(${HERO_IMAGES[0]})` } },
-                ] as const).map(opt => (
+                  { id: 'default' as const, label: 'ค่าเริ่มต้น', preview: 'bg-card border border-border', style: undefined as any },
+                  { id: 'gradient' as const, label: 'Gradient', preview: 'bg-gradient-to-b from-espresso to-[#1a1410]', style: undefined as any },
+                  { id: 'image' as const, label: 'รูปภาพโรงแรม', preview: 'bg-cover bg-center', style: { backgroundImage: `url(${HERO_IMAGES[0]})` } as any },
+                ].map(opt => (
                   <button
                     key={opt.id}
                     onClick={() => { setSidebarBg(opt.id); toast.success(`เปลี่ยน Sidebar เป็น ${opt.label}`); }}

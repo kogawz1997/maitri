@@ -7,20 +7,20 @@ import { Button } from '@/components/ui/button';
 import { TopBar } from '@/components/layout/top-bar';
 import {
   AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell,
-  XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend,
+  XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
 } from 'recharts';
 import { formatCurrency } from '@/lib/utils';
 import { format, subDays, eachDayOfInterval, startOfMonth, endOfMonth, subMonths } from 'date-fns';
 import { th } from 'date-fns/locale';
-import { TrendingUp, TrendingDown, DollarSign, Users, Bed, Activity, Download, Calendar } from 'lucide-react';
+import { TrendingUp, TrendingDown, DollarSign, Bed, Activity, Download } from 'lucide-react';
 import { toast } from 'sonner';
 
 const CHART_COLORS = ['#C66A30', '#7A8471', '#B8956A', '#2A2522', '#A4522A', '#854329'];
 
 const PERIODS = [
-  { label: '7 วัน', days: 7 },
-  { label: '30 วัน', days: 30 },
-  { label: '90 วัน', days: 90 },
+  { label: '7 วัน', days: 7, custom: null },
+  { label: '30 วัน', days: 30, custom: null },
+  { label: '90 วัน', days: 90, custom: null },
   { label: 'เดือนนี้', days: 0, custom: 'month' },
   { label: 'เดือนที่แล้ว', days: 0, custom: 'lastmonth' },
 ];
@@ -64,10 +64,11 @@ export function ReportsClient({ hotelId }: { hotelId: string }) {
       const dailyData = days.map(day => {
         const dayStr = format(day, 'yyyy-MM-dd');
         const occupied = resvs?.filter(r => r.check_in <= dayStr && r.check_out > dayStr) || [];
-        const revenue = occupied.reduce((s, r) => s + (Number(r.total_amount) / r.nights), 0);
+        const revenue = occupied.reduce((s, r) => s + (Number(r.total_amount) / (r.nights || 1)), 0);
         const occ = (occupied.length / totalRooms) * 100;
+        const dateFmt = days.length > 60 ? 'MMM' : 'd MMM';
         return {
-          date: format(day, days.length > 60 ? 'MMM', { locale: th }) : format(day, 'd MMM', { locale: th }),
+          date: format(day, dateFmt, { locale: th }),
           revenue: Math.round(revenue),
           occupancy: Math.round(occ),
           rooms: occupied.length,
@@ -86,7 +87,8 @@ export function ReportsClient({ hotelId }: { hotelId: string }) {
       const totalRevenue = resvs?.reduce((s, r) => s + Number(r.total_amount), 0) || 0;
       const checkedIn = resvs?.filter(r => ['confirmed','checked_in','checked_out'].includes(r.status)) || [];
       const avgOcc = dailyData.length > 0 ? dailyData.reduce((s, d) => s + d.occupancy, 0) / dailyData.length : 0;
-      const adr = checkedIn.length > 0 ? totalRevenue / checkedIn.reduce((s, r) => s + r.nights, 0) : 0;
+      const totalNights = checkedIn.reduce((s, r) => s + (r.nights || 1), 0);
+      const adr = totalNights > 0 ? totalRevenue / totalNights : 0;
       const revpar = adr * (avgOcc / 100);
 
       setKpis({ adr: Math.round(adr), revpar: Math.round(revpar), occupancy: Math.round(avgOcc), totalRevenue: Math.round(totalRevenue) });
@@ -110,11 +112,10 @@ export function ReportsClient({ hotelId }: { hotelId: string }) {
     toast.success('Export CSV เรียบร้อย');
   }
 
-  function exportReservationsCSV() {
-    toast.info('กำลัง export... ใช้เวลาสักครู่');
-    // Trigger download via API route
+  function exportReservations() {
     const { start, end } = getDateRange();
-    window.open(`/api/reports/export?hotelId=${hotelId}&start=${format(start,'yyyy-MM-dd')}&end=${format(end,'yyyy-MM-dd')}`, '_blank');
+    const url = `/api/reports/export?hotelId=${hotelId}&start=${format(start,'yyyy-MM-dd')}&end=${format(end,'yyyy-MM-dd')}`;
+    window.open(url, '_blank');
   }
 
   return (
@@ -125,7 +126,10 @@ export function ReportsClient({ hotelId }: { hotelId: string }) {
         action={
           <div className="flex gap-2">
             <Button variant="outline" size="sm" onClick={exportCSV}>
-              <Download className="h-3.5 w-3.5" /> Export CSV
+              <Download className="h-3.5 w-3.5" /> Revenue CSV
+            </Button>
+            <Button variant="outline" size="sm" onClick={exportReservations}>
+              <Download className="h-3.5 w-3.5" /> Reservations CSV
             </Button>
           </div>
         }
@@ -138,101 +142,57 @@ export function ReportsClient({ hotelId }: { hotelId: string }) {
           return (
             <button
               key={p.label}
-              onClick={() => { if (p.custom) { setCustomPeriod(p.custom); } else { setCustomPeriod(null); setPeriod(p.days); } }}
-              className={`px-3 py-1.5 text-xs rounded-lg font-medium whitespace-nowrap transition-colors ${isActive ? 'bg-primary text-primary-foreground' : 'bg-secondary text-muted-foreground hover:text-foreground'}`}
+              onClick={() => {
+                if (p.custom) { setCustomPeriod(p.custom); }
+                else { setCustomPeriod(null); setPeriod(p.days); }
+              }}
+              className={`px-3 py-1.5 text-xs rounded-lg font-medium whitespace-nowrap transition-colors ${
+                isActive ? 'bg-primary text-primary-foreground' : 'bg-secondary text-muted-foreground hover:text-foreground'
+              }`}
             >
               {p.label}
             </button>
           );
         })}
-      </div>        .select('check_in, check_out, total_amount, source, nights, status')
-        .eq('hotel_id', hotelId)
-        .gte('check_in', format(subDays(today, 30), 'yyyy-MM-dd'))
-        .neq('status', 'cancelled');
-
-      const { data: rooms } = await supabase.from('rooms').select('id').eq('hotel_id', hotelId);
-      const totalRooms = rooms?.length || 1;
-
-      const dailyData = days.map(day => {
-        const dayStr = format(day, 'yyyy-MM-dd');
-        const dayResvs = resvs?.filter((r: any) => r.check_in <= dayStr && r.check_out > dayStr) || [];
-        const revenue = dayResvs.reduce((s: number, r: any) => s + (Number(r.total_amount) / r.nights || 0), 0);
-        const occupied = dayResvs.length;
-        return {
-          date: format(day, 'd/M'),
-          revenue,
-          occupancy: (occupied / totalRooms) * 100,
-        };
-      });
-
-      setRevenueData(dailyData);
-
-      const channels: Record<string, number> = {};
-      resvs?.forEach((r: any) => {
-        channels[r.source] = (channels[r.source] || 0) + Number(r.total_amount);
-      });
-      setChannelMix(Object.entries(channels).map(([name, value]) => ({ name, value })));
-
-      const totalRevenue = resvs?.reduce((s: number, r: any) => s + Number(r.total_amount), 0) || 0;
-      const totalNights = resvs?.reduce((s: number, r: any) => s + r.nights, 0) || 0;
-      const avgOccupancy = dailyData.reduce((s, d) => s + d.occupancy, 0) / dailyData.length;
-
-      setKpis({
-        adr: totalNights > 0 ? totalRevenue / totalNights : 0,
-        revpar: totalRevenue / (totalRooms * 30),
-        occupancy: avgOccupancy,
-        totalRevenue,
-      });
-    }
-    load();
-  }, [hotelId]);
-
-  return (
-    <div className="container max-w-7xl py-8 animate-fade-in">
-      <TopBar title="รายงาน" description="ข้อมูล 30 วันล่าสุด" />
-
-      {/* KPI Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <KPICard label="รายได้รวม" value={formatCurrency(kpis.totalRevenue)} icon={DollarSign} />
-        <KPICard label="ADR" sublabel="ค่าห้องเฉลี่ย" value={formatCurrency(kpis.adr)} icon={Bed} />
-        <KPICard label="RevPAR" sublabel="รายได้ต่อห้องว่าง" value={formatCurrency(kpis.revpar)} icon={Activity} />
-        <KPICard label="Occupancy" sublabel="อัตราเข้าพัก" value={`${kpis.occupancy.toFixed(1)}%`} icon={Users} />
       </div>
 
-      {/* Revenue chart */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>รายได้รายวัน</CardTitle>
-          <CardDescription>30 วันที่ผ่านมา</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ResponsiveContainer width="100%" height={300}>
-            <AreaChart data={revenueData}>
-              <defs>
-                <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#C66A30" stopOpacity={0.3}/>
-                  <stop offset="95%" stopColor="#C66A30" stopOpacity={0}/>
-                </linearGradient>
-              </defs>
-              <CartesianGrid stroke="hsl(var(--border))" strokeDasharray="3 3" vertical={false} />
-              <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" fontSize={11} />
-              <YAxis stroke="hsl(var(--muted-foreground))" fontSize={11} />
-              <Tooltip
-                formatter={(v: any) => formatCurrency(v)}
-                contentStyle={{
-                  background: 'hsl(var(--card))',
-                  border: '1px solid hsl(var(--border))',
-                  borderRadius: '0.5rem',
-                  fontSize: '12px',
-                }}
-              />
-              <Area type="monotone" dataKey="revenue" stroke="#C66A30" strokeWidth={2} fill="url(#colorRevenue)" />
-            </AreaChart>
-          </ResponsiveContainer>
-        </CardContent>
-      </Card>
+      {/* KPI Grid */}
+      <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+        <KPICard label="รายได้รวม" value={formatCurrency(kpis.totalRevenue)} icon={DollarSign} />
+        <KPICard label="ADR" sublabel="ราคาห้องเฉลี่ย/คืน" value={formatCurrency(kpis.adr)} icon={Activity} />
+        <KPICard label="RevPAR" sublabel="รายได้ต่อห้องทั้งหมด" value={formatCurrency(kpis.revpar)} icon={TrendingUp} />
+        <KPICard label="Occupancy" sublabel="เฉลี่ยช่วงที่เลือก" value={`${kpis.occupancy}%`} icon={Bed} />
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* Charts */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>รายได้รายวัน</CardTitle>
+            <CardDescription>Revenue trend ในช่วงที่เลือก</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ResponsiveContainer width="100%" height={250}>
+              <AreaChart data={revenueData}>
+                <defs>
+                  <linearGradient id="revenueGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#C66A30" stopOpacity={0.15} />
+                    <stop offset="95%" stopColor="#C66A30" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid stroke="hsl(var(--border))" strokeDasharray="3 3" vertical={false} />
+                <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                <YAxis stroke="hsl(var(--muted-foreground))" fontSize={11} tickFormatter={v => `${(v/1000).toFixed(0)}k`} />
+                <Tooltip
+                  formatter={(v: any) => formatCurrency(v)}
+                  contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '0.5rem', fontSize: '12px' }}
+                />
+                <Area type="monotone" dataKey="revenue" stroke="#C66A30" strokeWidth={2} fill="url(#revenueGrad)" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
             <CardTitle>Occupancy รายวัน</CardTitle>
@@ -243,59 +203,52 @@ export function ReportsClient({ hotelId }: { hotelId: string }) {
               <BarChart data={revenueData}>
                 <CartesianGrid stroke="hsl(var(--border))" strokeDasharray="3 3" vertical={false} />
                 <XAxis dataKey="date" stroke="hsl(var(--muted-foreground))" fontSize={11} />
-                <YAxis stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                <YAxis stroke="hsl(var(--muted-foreground))" fontSize={11} domain={[0, 100]} />
                 <Tooltip
                   formatter={(v: any) => `${v.toFixed(0)}%`}
-                  contentStyle={{
-                    background: 'hsl(var(--card))',
-                    border: '1px solid hsl(var(--border))',
-                    borderRadius: '0.5rem',
-                    fontSize: '12px',
-                  }}
+                  contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '0.5rem', fontSize: '12px' }}
                 />
-                <Bar dataKey="occupancy" fill="#7A8471" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="occupancy" fill="#7A8471" radius={[3, 3, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
+      </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>สัดส่วนช่องทาง</CardTitle>
-            <CardDescription>รายได้แบ่งตามแหล่งที่มา</CardDescription>
-          </CardHeader>
-          <CardContent>
-            {channelMix.length === 0 ? (
-              <p className="text-center text-sm text-muted-foreground py-12">ยังไม่มีข้อมูล</p>
-            ) : (
-              <ResponsiveContainer width="100%" height={250}>
+      <Card>
+        <CardHeader>
+          <CardTitle>สัดส่วนช่องทาง</CardTitle>
+          <CardDescription>รายได้แบ่งตามแหล่งที่มา</CardDescription>
+        </CardHeader>
+        <CardContent>
+          {channelMix.length === 0 ? (
+            <p className="text-center text-sm text-muted-foreground py-12">ยังไม่มีข้อมูล</p>
+          ) : (
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <ResponsiveContainer width="100%" height={220}>
                 <PieChart>
                   <Pie data={channelMix} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={50} outerRadius={90} paddingAngle={2}>
                     {channelMix.map((_, i) => <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />)}
                   </Pie>
                   <Tooltip
                     formatter={(v: any) => formatCurrency(v)}
-                    contentStyle={{
-                      background: 'hsl(var(--card))',
-                      border: '1px solid hsl(var(--border))',
-                      borderRadius: '0.5rem',
-                      fontSize: '12px',
-                    }}
+                    contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '0.5rem', fontSize: '12px' }}
                   />
                 </PieChart>
               </ResponsiveContainer>
-            )}
-            <div className="flex flex-wrap gap-3 mt-4 justify-center">
-              {channelMix.map((c, i) => (
-                <div key={c.name} className="flex items-center gap-1.5 text-xs">
-                  <div className="h-2 w-2 rounded-sm" style={{ background: CHART_COLORS[i % CHART_COLORS.length] }} />
-                  <span>{c.name}</span>
-                </div>
-              ))}
+              <div className="flex flex-wrap gap-3 justify-center">
+                {channelMix.map((c, i) => (
+                  <div key={c.name} className="flex items-center gap-1.5 text-xs">
+                    <div className="h-2 w-2 rounded-sm" style={{ background: CHART_COLORS[i % CHART_COLORS.length] }} />
+                    <span>{c.name}</span>
+                    <span className="text-muted-foreground">({formatCurrency(c.value)})</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

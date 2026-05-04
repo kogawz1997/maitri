@@ -46,6 +46,15 @@ jobs:
       ANTHROPIC_API_KEY: sk-ant-placeholder-for-ci-build-only
       # App URL
       NEXT_PUBLIC_APP_URL: https://maitri-preview.vercel.app
+      # Additional required vars
+      CRON_SECRET: demo_cron_secret_placeholder
+      WHATSAPP_APP_SECRET: demo_whatsapp_secret_placeholder
+      IMMIGRATION_API_KEY: demo_immigration_placeholder
+      OMISE_WEBHOOK_SECRET: demo_omise_webhook_placeholder
+      ETAX_USERNAME: demo@etax.placeholder.com
+      ETAX_PASSWORD: demo_etax_placeholder
+      FLOWACCOUNT_API_KEY: demo_flowaccount_placeholder
+      PEAK_API_KEY: demo_peak_placeholder
       # Payment (placeholder — won't charge anything)
       OMISE_PUBLIC_KEY: pkey_test_placeholder
       OMISE_SECRET_KEY: skey_test_placeholder

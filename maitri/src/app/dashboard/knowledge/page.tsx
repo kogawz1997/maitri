@@ -40,7 +40,6 @@ export default function KnowledgePage() {
   const [form, setForm] = useState({ category: 'faq', title: '', content: '', language: 'th', active: true });
   const [saving, setSaving] = useState(false);
 
-  const [hotelId, setHotelId] = useState('');
 
   useEffect(() => {
     async function init() {

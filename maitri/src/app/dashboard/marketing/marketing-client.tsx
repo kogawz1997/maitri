@@ -150,7 +150,7 @@ export function MarketingClient({ hotelId, campaigns, reviews, eligibleGuests }:
           {revs.length === 0 ? (
             <EmptyState icon={Star} title="ยังไม่มีรีวิว" description="รีวิวจาก OTA จะแสดงที่นี่" />
           ) : revs.map(r => (
-            <ReviewCard key={r.id} review={r} onReply={(reply) => replyReview(r.id, reply)} />
+            <ReviewCard key={r.id} review={r} onReply={(reply: string) => { replyReview(r.id, reply); }} />
           ))}
         </div>
       )}
