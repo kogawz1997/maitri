@@ -1,0 +1,16 @@
+{
+  "name": "Maitri production uptime monitors",
+  "intervalSeconds": 60,
+  "regions": ["sin1", "hkg1", "iad1"],
+  "checks": [
+    { "name": "public-home", "method": "GET", "path": "/", "expectedStatus": 200, "timeoutMs": 8000 },
+    { "name": "health", "method": "GET", "path": "/api/health", "expectedStatus": 200, "timeoutMs": 5000 },
+    { "name": "ops-health", "method": "GET", "path": "/api/ops/health", "expectedStatus": 200, "timeoutMs": 5000 }
+  ],
+  "alerts": {
+    "channels": ["email", "line", "sentry"],
+    "failureThreshold": 3,
+    "recoveryThreshold": 2,
+    "owner": "ops@maitri.local"
+  }
+}

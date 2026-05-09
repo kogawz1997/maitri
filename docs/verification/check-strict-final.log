@@ -1,0 +1,182 @@
+
+> maitri-pms@0.3.0 check:strict
+> npm run type-check && npm run lint && npm run test:core-ops && npm run test:saas-integrations && npm run test:ops && npm run test:final
+
+
+> maitri-pms@0.3.0 type-check
+> tsc --noEmit
+
+
+> maitri-pms@0.3.0 lint
+> eslint . --ext .ts,.tsx
+
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/dashboard/audit/audit-client.tsx
+  59:6  warning  React Hook useCallback has a missing dependency: 'supabase'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/dashboard/branding/branding-client.tsx
+  155:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  167:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  176:66  warning  Image elements must have an alt prop, either with meaningful text, or an empty string for decorative images                                                                                                                                                                              jsx-a11y/alt-text
+  193:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  256:17  warning  Image elements must have an alt prop, either with meaningful text, or an empty string for decorative images                                                                                                                                                                              jsx-a11y/alt-text
+  258:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  271:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/dashboard/fb/menu/fb-menu-client.tsx
+  91:46  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/dashboard/knowledge/page.tsx
+  53:6  warning  React Hook useEffect has missing dependencies: 'load' and 'supabase'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/h/[slug]/page.tsx
+  129:32  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  251:31  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/onboarding/onboarding-client.tsx
+  303:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  322:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/page.tsx
+  153:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  167:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  306:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  352:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  356:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  359:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  465:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/portal/bookings/my-bookings-client.tsx
+  216:23  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/portal/bookings/qr/page.tsx
+  39:6   warning  React Hook useEffect has a missing dependency: 'supabase'. Either include it or remove the dependency array                                                                                                                                                                              react-hooks/exhaustive-deps
+  68:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/portal/wishlist/wishlist-client.tsx
+  53:23  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/room/[code]/in-stay-chat-client.tsx
+  65:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/app/search/page.tsx
+  99:6  warning  React Hook useEffect has missing dependencies: 'search' and 'searchParams'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/booking/BookingSummary.tsx
+  36:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/booking/booking-engine.tsx
+   85:6   warning  React Hook useEffect has a missing dependency: 'supabase'. Either include it or remove the dependency array                                                                                                                                                                              react-hooks/exhaustive-deps
+  162:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  184:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  291:23  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  542:40  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  663:32  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/booking/hotel-gallery.tsx
+   32:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+   38:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+   43:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+   79:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  103:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/booking/hotel-preview.tsx
+  17:32  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  32:9   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  68:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/dashboard/fb-pos-client.tsx
+  35:32  warning  React Hook useEffect has a missing dependency: 'load'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/dashboard/housekeeping-client.tsx
+  29:32  warning  React Hook useEffect has a missing dependency: 'load'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/dashboard/reports-client.tsx
+  98:6  warning  React Hook useEffect has a missing dependency: 'supabase'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/dashboard/room-type-image-upload.tsx
+  95:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/dashboard/rooms-client.tsx
+  33:32  warning  React Hook useEffect has a missing dependency: 'load'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/dashboard/spa-booking-client.tsx
+  38:32  warning  React Hook useEffect has a missing dependency: 'load'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/inbox/inbox-client.tsx
+  102:6  warning  React Hook useEffect has missing dependencies: 'activeId' and 'supabase'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  133:6  warning  React Hook useEffect has a missing dependency: 'supabase'. Either include it or remove the dependency array                   react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/layout/sidebar.tsx
+  118:6  warning  React Hook useEffect has a missing dependency: 'supabase'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/public/HotelCard.tsx
+  18:20  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/public/LuxuryGallery.tsx
+  35:9   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  57:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/public/RoomCard.tsx
+  47:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/reservation/reservations-client.tsx
+  90:6  warning  React Hook useCallback has a missing dependency: 'supabase'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/ui/lightbox.tsx
+  57:7   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  82:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/mnt/data/task4p_work/Full-hotel-patched/src/components/ui/wishlist-button.tsx
+  26:6  warning  React Hook useEffect has a missing dependency: 'supabase'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/mnt/data/task4p_work/Full-hotel-patched/src/lib/hooks/use-realtime.ts
+  48:6  warning  React Hook useCallback has a missing dependency: 'supabase'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  56:6  warning  React Hook useEffect has a missing dependency: 'supabase'. Either include it or remove the dependency array    react-hooks/exhaustive-deps
+
+✖ 61 problems (0 errors, 61 warnings)
+
+
+> maitri-pms@0.3.0 test:core-ops
+> node tests/core-ops.test.mjs
+
+✅ Core PMS ops checks passed
+
+> maitri-pms@0.3.0 test:saas-integrations
+> node tests/saas-integrations.test.mjs
+
+✅ SaaS integrations checks passed
+
+> maitri-pms@0.3.0 test:ops
+> npm run check:uptime && npm run test:unit && npm run test:e2e
+
+
+> maitri-pms@0.3.0 check:uptime
+> node scripts/check-uptime-config.mjs
+
+✅ Uptime config checks passed
+
+> maitri-pms@0.3.0 test:unit
+> node tests/unit/core-policy.test.mjs && node tests/unit/availability-lock-guards.test.mjs && node tests/unit/reliability-sweep-policy.test.mjs && node tests/unit/reliability-metrics.test.mjs && node tests/unit/ai-assistant.test.mjs
+
+✅ Unit policy checks passed
+✅ availability lock guard checks passed
+reliability sweep policy tests passed
+reliability metrics tests passed
+ai assistant tests passed
+
+> maitri-pms@0.3.0 test:e2e
+> node tests/e2e/production-flow.test.mjs
+
+✅ E2E production flow static checks passed
+
+> maitri-pms@0.3.0 test:final
+> node tests/final-hardening.test.mjs
+
+✅ lint uses standalone eslint command
+✅ Node engine pinned to 20.x
+✅ next-env.d.ts present
+✅ production env example has no duplicate critical keys
+✅ TM30 reminder sends ops alert and logs event
+✅ Stripe payment failure sends ops alert and logs event
+✅ final hardening checks passed

@@ -1,0 +1,1 @@
+export default function SecurityPage(){return <div className='p-6 space-y-2'><h1 className='text-2xl font-semibold'>Security Center</h1><p className='text-sm text-muted-foreground'>บันทึก incident, visitor log และตรวจสอบความปลอดภัยพื้นที่</p></div>;}

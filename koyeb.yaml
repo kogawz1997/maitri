@@ -1,0 +1,19 @@
+name: maitri-pms
+services:
+  - name: web
+    git:
+      branch: main
+    instance_type: free
+    ports:
+      - port: 3000
+        http: true
+    env:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
+    build_command: npm install --legacy-peer-deps --no-audit --no-fund && npm run build
+    run_command: npm run start
+    health_checks:
+      - path: /api/health
+        port: 3000

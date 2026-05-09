@@ -1,0 +1,618 @@
+# Project File Inventory (Current)
+
+- Generated on: 2026-05-08 (UTC)
+- Total tracked files: 546
+
+## Files by top-level path
+
+- `.dockerignore`: 1 files
+- `.editorconfig`: 1 files
+- `.env.demo`: 1 files
+- `.env.example`: 1 files
+- `.env.production.example`: 1 files
+- `.eslintrc.json`: 1 files
+- `.github`: 6 files
+- `.gitignore`: 1 files
+- `.node-version`: 1 files
+- `.nvmrc`: 1 files
+- `CHANGELOG.md`: 1 files
+- `CODEX_STABILITY_PLAYBOOK.md`: 1 files
+- `CODE_OF_CONDUCT.md`: 1 files
+- `CONTRIBUTING.md`: 1 files
+- `DEPLOYMENT_TOOLKIT_ADDED.md`: 1 files
+- `Dockerfile`: 1 files
+- `LICENSE`: 1 files
+- `MAITRI_HARDENING_SUMMARY.md`: 1 files
+- `PHASE10_CLOSED.md`: 1 files
+- `PHASE1_CLOSED.md`: 1 files
+- `PHASE3_CLOSED.md`: 1 files
+- `PHASE4_CLOSED.md`: 1 files
+- `PHASE5_CLOSED.md`: 1 files
+- `PHASE6_CLOSED.md`: 1 files
+- `PHASE7_CLOSED.md`: 1 files
+- `PHASE8_CLOSED.md`: 1 files
+- `PHASE9_CLOSED.md`: 1 files
+- `PRODUCTION_PATCH_NOTES.md`: 1 files
+- `PRODUCTION_SETUP.md`: 1 files
+- `README.md`: 1 files
+- `ROADMAP.md`: 1 files
+- `ROUND2_CLOSED.md`: 1 files
+- `ROUND3_CLOSED.md`: 1 files
+- `ROUND4_CLOSED.md`: 1 files
+- `ROUND5_REALITY_CHECK.md`: 1 files
+- `SECURITY.md`: 1 files
+- `TODO.md`: 1 files
+- `deploy`: 2 files
+- `docker-compose.yml`: 1 files
+- `docs`: 34 files
+- `ecosystem.config.cjs`: 1 files
+- `fly.toml`: 1 files
+- `jest.config.ts`: 1 files
+- `koyeb.yaml`: 1 files
+- `next.config.js`: 1 files
+- `nixpacks.toml`: 1 files
+- `ops`: 2 files
+- `package.json`: 1 files
+- `playwright.config.ts`: 1 files
+- `postcss.config.js`: 1 files
+- `public`: 8 files
+- `railway.json`: 1 files
+- `scripts`: 14 files
+- `sentry.client.config.ts`: 1 files
+- `sentry.edge.config.ts`: 1 files
+- `sentry.server.config.ts`: 1 files
+- `src`: 390 files
+- `supabase`: 21 files
+- `tailwind.config.js`: 1 files
+- `tests`: 16 files
+- `tsconfig.json`: 1 files
+- `vercel.json`: 1 files
+
+## Full tracked file list
+
+- `.dockerignore`
+- `.editorconfig`
+- `.env.demo`
+- `.env.example`
+- `.env.production.example`
+- `.eslintrc.json`
+- `.github/ISSUE_TEMPLATE/bug_report.yml`
+- `.github/ISSUE_TEMPLATE/feature_request.yml`
+- `.github/PULL_REQUEST_TEMPLATE.md`
+- `.github/SETUP_VERCEL.md`
+- `.github/workflows/ci.yml`
+- `.github/workflows/deploy-check.yml`
+- `.gitignore`
+- `.node-version`
+- `.nvmrc`
+- `CHANGELOG.md`
+- `CODEX_STABILITY_PLAYBOOK.md`
+- `CODE_OF_CONDUCT.md`
+- `CONTRIBUTING.md`
+- `DEPLOYMENT_TOOLKIT_ADDED.md`
+- `Dockerfile`
+- `LICENSE`
+- `MAITRI_HARDENING_SUMMARY.md`
+- `PHASE10_CLOSED.md`
+- `PHASE1_CLOSED.md`
+- `PHASE3_CLOSED.md`
+- `PHASE4_CLOSED.md`
+- `PHASE5_CLOSED.md`
+- `PHASE6_CLOSED.md`
+- `PHASE7_CLOSED.md`
+- `PHASE8_CLOSED.md`
+- `PHASE9_CLOSED.md`
+- `PRODUCTION_PATCH_NOTES.md`
+- `PRODUCTION_SETUP.md`
+- `README.md`
+- `ROADMAP.md`
+- `ROUND2_CLOSED.md`
+- `ROUND3_CLOSED.md`
+- `ROUND4_CLOSED.md`
+- `ROUND5_REALITY_CHECK.md`
+- `SECURITY.md`
+- `TODO.md`
+- `deploy/nginx.conf`
+- `deploy/render.yaml`
+- `docker-compose.yml`
+- `docs/API_WEBHOOKS.md`
+- `docs/ARCHITECTURE.md`
+- `docs/BACKUP_RUNBOOK.md`
+- `docs/DATABASE.md`
+- `docs/DEPLOYMENT.md`
+- `docs/DEPLOYMENT_MATRIX.md`
+- `docs/DETAILED_INSPECTION_2026-05-06.md`
+- `docs/GO_LIVE_100_CHECKLIST.md`
+- `docs/INCIDENT_RUNBOOK.md`
+- `docs/PRODUCTION_SAAS_CHECKLIST.md`
+- `docs/P_ROUND_MIN_PLAN.md`
+- `docs/QUICK_START.md`
+- `docs/ROUND2_SAAS_INTEGRATIONS.md`
+- `docs/SETUP.md`
+- `docs/STAFF_MANUAL.md`
+- `docs/TODO_3P_MAPPING.md`
+- `docs/UPTIME_MONITOR.md`
+- `docs/accessibility/P2_AUDIT.md`
+- `docs/developer/API.md`
+- `docs/integrations/ACCOUNTING.md`
+- `docs/integrations/CHANNEL_MANAGER.md`
+- `docs/integrations/ETAX.md`
+- `docs/integrations/LINE.md`
+- `docs/integrations/OMISE.md`
+- `docs/integrations/OTA_READINESS.md`
+- `docs/integrations/TM30.md`
+- `docs/integrations/WHATSAPP.md`
+- `docs/mobile/REACT_NATIVE_APP.md`
+- `docs/operations/API_HARDENING_NOTES.md`
+- `docs/operations/P6_LAUNCH_READINESS.md`
+- `docs/operations/P7_GO_LIVE.md`
+- `docs/operations/PHASE2_REVENUE_COMPLIANCE.md`
+- `docs/operations/PRODUCTION_READINESS.md`
+- `docs/security/SECRET_ROTATION.md`
+- `ecosystem.config.cjs`
+- `fly.toml`
+- `jest.config.ts`
+- `koyeb.yaml`
+- `next.config.js`
+- `nixpacks.toml`
+- `ops/sentry-alerts.json`
+- `ops/uptime-monitor.json`
+- `package.json`
+- `playwright.config.ts`
+- `postcss.config.js`
+- `public/.gitkeep`
+- `public/icons/icon-192.svg`
+- `public/icons/icon-512.svg`
+- `public/icons/icon.svg`
+- `public/manifest.json`
+- `public/manifest.webmanifest`
+- `public/offline.html`
+- `public/sw.js`
+- `railway.json`
+- `scripts/backup-supabase.mjs`
+- `scripts/check-deploy-targets.mjs`
+- `scripts/check-health.mjs`
+- `scripts/check-production-env.mjs`
+- `scripts/check-uptime-config.mjs`
+- `scripts/deploy-local.ps1`
+- `scripts/deploy-local.sh`
+- `scripts/ensure-next-installed.mjs`
+- `scripts/generate-icons.mjs`
+- `scripts/go-live-check.mjs`
+- `scripts/p8-check.mjs`
+- `scripts/security-audit.mjs`
+- `scripts/seed-demo.ts`
+- `scripts/smoke-test.mjs`
+- `sentry.client.config.ts`
+- `sentry.edge.config.ts`
+- `sentry.server.config.ts`
+- `src/app/admin/admin-panel-client.tsx`
+- `src/app/admin/errors/page.tsx`
+- `src/app/admin/layout.tsx`
+- `src/app/admin/login/page.tsx`
+- `src/app/admin/orgs/[id]/page.tsx`
+- `src/app/admin/page.tsx`
+- `src/app/api/accounting/exports/route.ts`
+- `src/app/api/admin/ai/assist/route.ts`
+- `src/app/api/admin/errors/route.ts`
+- `src/app/api/admin/impersonate/route.ts`
+- `src/app/api/admin/multi-property/inventory/route.ts`
+- `src/app/api/admin/multi-property/summary/route.ts`
+- `src/app/api/admin/orgs/[id]/impersonate/route.ts`
+- `src/app/api/admin/orgs/[id]/usage/route.ts`
+- `src/app/api/admin/orgs/route.ts`
+- `src/app/api/admin/usage/route.ts`
+- `src/app/api/ai/concierge/route.ts`
+- `src/app/api/ai/dynamic-pricing/route.ts`
+- `src/app/api/ai/p8-reply/route.ts`
+- `src/app/api/ai/send-message/route.ts`
+- `src/app/api/ai/suggest-reply/route.ts`
+- `src/app/api/analytics/advanced/route.ts`
+- `src/app/api/analytics/summary/route.ts`
+- `src/app/api/auth/logout/route.ts`
+- `src/app/api/auth/setup-organization/route.ts`
+- `src/app/api/automation/rules/route.ts`
+- `src/app/api/automation/run/route.ts`
+- `src/app/api/billing/checkout/route.ts`
+- `src/app/api/billing/portal/route.ts`
+- `src/app/api/billing/webhook/route.ts`
+- `src/app/api/bookings/quote/route.ts`
+- `src/app/api/channels/line/connect/route.ts`
+- `src/app/api/compliance/etax/route.ts`
+- `src/app/api/compliance/export/route.ts`
+- `src/app/api/compliance/tm30/export/route.ts`
+- `src/app/api/compliance/tm30/route.ts`
+- `src/app/api/cron/abandoned-booking-recovery/route.ts`
+- `src/app/api/cron/billing-reconcile/route.ts`
+- `src/app/api/cron/billing-retry/route.ts`
+- `src/app/api/cron/daily-summary/route.ts`
+- `src/app/api/cron/expire-pending/route.ts`
+- `src/app/api/cron/night-audit/route.ts`
+- `src/app/api/cron/no-show/route.ts`
+- `src/app/api/cron/ota-sync/route.ts`
+- `src/app/api/cron/post-stay/route.ts`
+- `src/app/api/cron/pre-arrival/route.ts`
+- `src/app/api/cron/reliability-sweep/route.ts`
+- `src/app/api/cron/tm30-reminder/route.ts`
+- `src/app/api/cron/trial-expire/route.ts`
+- `src/app/api/cron/trial-expiry/route.ts`
+- `src/app/api/fb/menu/route.ts`
+- `src/app/api/fb/orders/route.ts`
+- `src/app/api/folio/charge/route.ts`
+- `src/app/api/folio/split/route.ts`
+- `src/app/api/folios/[id]/items/route.ts`
+- `src/app/api/folios/[id]/merge/route.ts`
+- `src/app/api/folios/[id]/payments/allocate/route.ts`
+- `src/app/api/folios/[id]/split/route.ts`
+- `src/app/api/folios/[id]/tax-adjustment/route.ts`
+- `src/app/api/guest/auth/forgot-password/route.ts`
+- `src/app/api/guest/auth/login/route.ts`
+- `src/app/api/guest/auth/register/route.ts`
+- `src/app/api/guest/bookings/[id]/check-in/route.ts`
+- `src/app/api/guest/bookings/[id]/modify/route.ts`
+- `src/app/api/guest/bookings/[id]/receipt/route.ts`
+- `src/app/api/guest/bookings/[id]/route.ts`
+- `src/app/api/guest/bookings/[id]/upsells/route.ts`
+- `src/app/api/guest/bookings/route.ts`
+- `src/app/api/guest/delete-account/route.ts`
+- `src/app/api/guest/export/route.ts`
+- `src/app/api/guest/loyalty/route.ts`
+- `src/app/api/guest/notifications/route.ts`
+- `src/app/api/guest/privacy/export/route.ts`
+- `src/app/api/guest/referrals/route.ts`
+- `src/app/api/guest/reviews/route.ts`
+- `src/app/api/guest/wishlist/route.ts`
+- `src/app/api/health/route.ts`
+- `src/app/api/housekeeping/tasks/[id]/complete/route.ts`
+- `src/app/api/housekeeping/tasks/[id]/start/route.ts`
+- `src/app/api/invoices/[id]/pdf/route.ts`
+- `src/app/api/invoices/payment/[paymentId]/route.ts`
+- `src/app/api/invoices/pdf/route.ts`
+- `src/app/api/iot/route.ts`
+- `src/app/api/localization/preferences/route.ts`
+- `src/app/api/loyalty/route.ts`
+- `src/app/api/mobile-key/route.ts`
+- `src/app/api/ops/alerts/route.ts`
+- `src/app/api/ops/client-error/route.ts`
+- `src/app/api/ops/go-live-check/route.ts`
+- `src/app/api/ops/health/route.ts`
+- `src/app/api/ops/metrics/route.ts`
+- `src/app/api/ops/rate-limit-test/route.ts`
+- `src/app/api/ops/readiness/route.ts`
+- `src/app/api/ops/smoke-test/route.ts`
+- `src/app/api/ota/connections/route.ts`
+- `src/app/api/ota/process/route.ts`
+- `src/app/api/ota/reconcile/route.ts`
+- `src/app/api/ota/sync/route.ts`
+- `src/app/api/ota/workers/agoda/route.ts`
+- `src/app/api/ota/workers/airbnb/route.ts`
+- `src/app/api/ota/workers/booking-com/route.ts`
+- `src/app/api/partners/integrations/route.ts`
+- `src/app/api/payments/charge/route.ts`
+- `src/app/api/payments/deposit/route.ts`
+- `src/app/api/payments/receipt/route.ts`
+- `src/app/api/payments/reconcile/route.ts`
+- `src/app/api/payments/refund/route.ts`
+- `src/app/api/plugins/marketplace/route.ts`
+- `src/app/api/promotions/route.ts`
+- `src/app/api/public/availability/route.ts`
+- `src/app/api/public/chat/route.ts`
+- `src/app/api/public/price-calendar/route.ts`
+- `src/app/api/public/promo/route.ts`
+- `src/app/api/public/search/route.ts`
+- `src/app/api/public/v1/hotels/route.ts`
+- `src/app/api/rates/route.ts`
+- `src/app/api/reports/export/route.ts`
+- `src/app/api/reservations/[id]/cancel-quote/route.ts`
+- `src/app/api/reservations/[id]/extend/route.ts`
+- `src/app/api/reservations/[id]/move-room/route.ts`
+- `src/app/api/reservations/[id]/no-show/route.ts`
+- `src/app/api/reservations/[id]/route.ts`
+- `src/app/api/reservations/extend/route.ts`
+- `src/app/api/reservations/move-room/route.ts`
+- `src/app/api/reservations/route.ts`
+- `src/app/api/room-types/[id]/images/route.ts`
+- `src/app/api/spa/bookings/route.ts`
+- `src/app/api/spa/services/route.ts`
+- `src/app/api/storage/optimize/route.ts`
+- `src/app/api/storage/upload/route.ts`
+- `src/app/api/team/accept-invite/route.ts`
+- `src/app/api/team/approve-account/route.ts`
+- `src/app/api/team/audit-trail/route.ts`
+- `src/app/api/team/create-account/route.ts`
+- `src/app/api/team/invite/route.ts`
+- `src/app/api/team/members/route.ts`
+- `src/app/api/team/route.ts`
+- `src/app/api/team/staff-login-link/route.ts`
+- `src/app/api/team/staff-login-validate/route.ts`
+- `src/app/api/webhooks/agoda/route.ts`
+- `src/app/api/webhooks/booking-com/route.ts`
+- `src/app/api/webhooks/events/route.ts`
+- `src/app/api/webhooks/line/route.ts`
+- `src/app/api/webhooks/omise/route.ts`
+- `src/app/api/webhooks/stripe/route.ts`
+- `src/app/api/webhooks/whatsapp/route.ts`
+- `src/app/auth/accept-invite/page.tsx`
+- `src/app/auth/forgot-password/page.tsx`
+- `src/app/auth/layout.tsx`
+- `src/app/auth/login/owner/page.tsx`
+- `src/app/auth/login/page.tsx`
+- `src/app/auth/login/staff/page.tsx`
+- `src/app/auth/reset-password/page.tsx`
+- `src/app/auth/signup/page.tsx`
+- `src/app/backoffice/login/page.tsx`
+- `src/app/booking/[hotel]/loading.tsx`
+- `src/app/booking/[hotel]/page.tsx`
+- `src/app/booking/[slug]/failed/page.tsx`
+- `src/app/booking/[slug]/pending/page.tsx`
+- `src/app/booking/[slug]/success/page.tsx`
+- `src/app/booking/preview/page.tsx`
+- `src/app/dashboard/accounting-ops/page.tsx`
+- `src/app/dashboard/accounting/page.tsx`
+- `src/app/dashboard/ai-concierge/page.tsx`
+- `src/app/dashboard/analytics/page.tsx`
+- `src/app/dashboard/audit-trail/page.tsx`
+- `src/app/dashboard/audit/audit-client.tsx`
+- `src/app/dashboard/audit/page.tsx`
+- `src/app/dashboard/automation/page.tsx`
+- `src/app/dashboard/billing/billing-client.tsx`
+- `src/app/dashboard/billing/page.tsx`
+- `src/app/dashboard/branding/branding-client.tsx`
+- `src/app/dashboard/branding/page.tsx`
+- `src/app/dashboard/channels/channels-client.tsx`
+- `src/app/dashboard/channels/line-setup/page.tsx`
+- `src/app/dashboard/channels/page.tsx`
+- `src/app/dashboard/concierge/page.tsx`
+- `src/app/dashboard/error.tsx`
+- `src/app/dashboard/fb/menu/fb-menu-client.tsx`
+- `src/app/dashboard/fb/menu/page.tsx`
+- `src/app/dashboard/fb/orders/fb-orders-client.tsx`
+- `src/app/dashboard/fb/orders/page.tsx`
+- `src/app/dashboard/fb/page.tsx`
+- `src/app/dashboard/go-live/page.tsx`
+- `src/app/dashboard/guests/[id]/guest-detail-client.tsx`
+- `src/app/dashboard/guests/[id]/page.tsx`
+- `src/app/dashboard/guests/page.tsx`
+- `src/app/dashboard/housekeeping/mobile/page.tsx`
+- `src/app/dashboard/housekeeping/page.tsx`
+- `src/app/dashboard/inbox/page.tsx`
+- `src/app/dashboard/integrations/page.tsx`
+- `src/app/dashboard/iot/iot-client.tsx`
+- `src/app/dashboard/iot/page.tsx`
+- `src/app/dashboard/knowledge/page.tsx`
+- `src/app/dashboard/launch/page.tsx`
+- `src/app/dashboard/layout.tsx`
+- `src/app/dashboard/loading.tsx`
+- `src/app/dashboard/localization/page.tsx`
+- `src/app/dashboard/loyalty/page.tsx`
+- `src/app/dashboard/maintenance/maintenance-client.tsx`
+- `src/app/dashboard/maintenance/page.tsx`
+- `src/app/dashboard/maintenance/tech/page.tsx`
+- `src/app/dashboard/marketing/marketing-client.tsx`
+- `src/app/dashboard/marketing/page.tsx`
+- `src/app/dashboard/marketing/promos/page.tsx`
+- `src/app/dashboard/marketing/promos/promos-client.tsx`
+- `src/app/dashboard/menu/page.tsx`
+- `src/app/dashboard/ota/page.tsx`
+- `src/app/dashboard/page.tsx`
+- `src/app/dashboard/permission-simulator/page.tsx`
+- `src/app/dashboard/pricing/dynamic-pricing-client.tsx`
+- `src/app/dashboard/pricing/page.tsx`
+- `src/app/dashboard/rates/page.tsx`
+- `src/app/dashboard/rates/rate-calendar-client.tsx`
+- `src/app/dashboard/rbac/page.tsx`
+- `src/app/dashboard/reports/page.tsx`
+- `src/app/dashboard/reservations/page.tsx`
+- `src/app/dashboard/revenue/page.tsx`
+- `src/app/dashboard/revenue/revenue-manager-client.tsx`
+- `src/app/dashboard/rooms/page.tsx`
+- `src/app/dashboard/rooms/qr/page.tsx`
+- `src/app/dashboard/rooms/qr/room-qr-client.tsx`
+- `src/app/dashboard/security/page.tsx`
+- `src/app/dashboard/settings/page.tsx`
+- `src/app/dashboard/setup/page.tsx`
+- `src/app/dashboard/setup/setup-client.tsx`
+- `src/app/dashboard/spa/bookings/page.tsx`
+- `src/app/dashboard/spa/bookings/spa-bookings-client.tsx`
+- `src/app/dashboard/spa/page.tsx`
+- `src/app/dashboard/spa/services/page.tsx`
+- `src/app/dashboard/spa/services/spa-services-client.tsx`
+- `src/app/dashboard/system/page.tsx`
+- `src/app/dashboard/team/approvals/page.tsx`
+- `src/app/dashboard/team/create-user/page.tsx`
+- `src/app/dashboard/team/page.tsx`
+- `src/app/destinations/[city]/page.tsx`
+- `src/app/global-error.tsx`
+- `src/app/globals.css`
+- `src/app/h/[slug]/loading.tsx`
+- `src/app/h/[slug]/opengraph-image.tsx`
+- `src/app/h/[slug]/page.tsx`
+- `src/app/hotels/[slug]/page.tsx`
+- `src/app/layout.tsx`
+- `src/app/loading.tsx`
+- `src/app/mobile/guest/page.tsx`
+- `src/app/mobile/housekeeping/page.tsx`
+- `src/app/mobile/owner-analytics/page.tsx`
+- `src/app/mobile/page.tsx`
+- `src/app/not-found.tsx`
+- `src/app/offline/page.tsx`
+- `src/app/onboarding/onboarding-client.tsx`
+- `src/app/onboarding/page.tsx`
+- `src/app/opengraph-image.tsx`
+- `src/app/page.tsx`
+- `src/app/portal/bookings/my-bookings-client.tsx`
+- `src/app/portal/bookings/page.tsx`
+- `src/app/portal/bookings/qr/page.tsx`
+- `src/app/portal/forgot-password/page.tsx`
+- `src/app/portal/keys/page.tsx`
+- `src/app/portal/layout.tsx`
+- `src/app/portal/login/page.tsx`
+- `src/app/portal/loyalty/page.tsx`
+- `src/app/portal/profile/guest-profile-client.tsx`
+- `src/app/portal/profile/page.tsx`
+- `src/app/portal/referrals/page.tsx`
+- `src/app/portal/reset-password/page.tsx`
+- `src/app/portal/wishlist/page.tsx`
+- `src/app/portal/wishlist/wishlist-client.tsx`
+- `src/app/privacy/page.tsx`
+- `src/app/robots.ts`
+- `src/app/room/[code]/in-stay-chat-client.tsx`
+- `src/app/room/[code]/page.tsx`
+- `src/app/search/loading.tsx`
+- `src/app/search/page.tsx`
+- `src/app/sitemap.ts`
+- `src/app/terms/page.tsx`
+- `src/components/booking/BookingStepper.tsx`
+- `src/components/booking/BookingSummary.tsx`
+- `src/components/booking/ConfirmationCard.tsx`
+- `src/components/booking/GuestForm.tsx`
+- `src/components/booking/PaymentMethodCard.tsx`
+- `src/components/booking/booking-engine.tsx`
+- `src/components/booking/guest-chat-widget.tsx`
+- `src/components/booking/hotel-gallery.tsx`
+- `src/components/booking/hotel-preview.tsx`
+- `src/components/booking/price-graph.tsx`
+- `src/components/dashboard/fb-pos-client.tsx`
+- `src/components/dashboard/housekeeping-client.tsx`
+- `src/components/dashboard/reports-client.tsx`
+- `src/components/dashboard/reservation-action-buttons.tsx`
+- `src/components/dashboard/room-type-image-upload.tsx`
+- `src/components/dashboard/rooms-client.tsx`
+- `src/components/dashboard/settings-client.tsx`
+- `src/components/dashboard/spa-booking-client.tsx`
+- `src/components/i18n/language-preview.tsx`
+- `src/components/inbox/inbox-client.tsx`
+- `src/components/layout/command-search.tsx`
+- `src/components/layout/mobile-dashboard-header.tsx`
+- `src/components/layout/mobile-nav.tsx`
+- `src/components/layout/sidebar.tsx`
+- `src/components/layout/top-bar.tsx`
+- `src/components/luxury/LuxuryBadge.tsx`
+- `src/components/luxury/LuxuryButton.tsx`
+- `src/components/luxury/LuxuryCard.tsx`
+- `src/components/luxury/LuxuryInput.tsx`
+- `src/components/luxury/LuxurySection.tsx`
+- `src/components/luxury/index.ts`
+- `src/components/providers/locale-provider.tsx`
+- `src/components/providers/pwa-register.tsx`
+- `src/components/providers/theme-provider.tsx`
+- `src/components/public/FilterDrawer.tsx`
+- `src/components/public/HotelCard.tsx`
+- `src/components/public/LuxuryGallery.tsx`
+- `src/components/public/ReviewCard.tsx`
+- `src/components/public/RoomCard.tsx`
+- `src/components/public/SearchHeader.tsx`
+- `src/components/public/StickyBookingBar.tsx`
+- `src/components/public/TrustBadges.tsx`
+- `src/components/reservation/reservations-client.tsx`
+- `src/components/ui/animated-number.tsx`
+- `src/components/ui/badge.tsx`
+- `src/components/ui/button.tsx`
+- `src/components/ui/card.tsx`
+- `src/components/ui/cookie-consent.tsx`
+- `src/components/ui/currency-switcher.tsx`
+- `src/components/ui/dialog.tsx`
+- `src/components/ui/empty-state.tsx`
+- `src/components/ui/input.tsx`
+- `src/components/ui/lightbox.tsx`
+- `src/components/ui/select.tsx`
+- `src/components/ui/skeleton.tsx`
+- `src/components/ui/states.tsx`
+- `src/components/ui/upgrade-prompt.tsx`
+- `src/components/ui/wishlist-button.tsx`
+- `src/hooks/use-counter.ts`
+- `src/hooks/use-scroll-reveal.ts`
+- `src/lib/accounting/index.ts`
+- `src/lib/accounting/vat.ts`
+- `src/lib/ai/assistant.js`
+- `src/lib/ai/index.ts`
+- `src/lib/ai/intent.ts`
+- `src/lib/auth/guards.ts`
+- `src/lib/auth/onboarding.ts`
+- `src/lib/auth/role-login.ts`
+- `src/lib/billing/feature-gate.ts`
+- `src/lib/billing/plans.ts`
+- `src/lib/billing/stripe.ts`
+- `src/lib/booking/availability-lock.ts`
+- `src/lib/booking/cancellation-policy.ts`
+- `src/lib/channel-manager/conflict.ts`
+- `src/lib/channel-manager/index.ts`
+- `src/lib/channels/email.ts`
+- `src/lib/channels/index.ts`
+- `src/lib/channels/line.ts`
+- `src/lib/channels/types.ts`
+- `src/lib/channels/wechat.ts`
+- `src/lib/channels/whatsapp.ts`
+- `src/lib/compliance/index.ts`
+- `src/lib/currency.ts`
+- `src/lib/email-templates/index.ts`
+- `src/lib/env.ts`
+- `src/lib/hooks/use-realtime.ts`
+- `src/lib/hotel-roles.ts`
+- `src/lib/housekeeping/auto-tasks.ts`
+- `src/lib/http/validation.ts`
+- `src/lib/i18n/hotel-copy.ts`
+- `src/lib/i18n/translations.ts`
+- `src/lib/images.ts`
+- `src/lib/integrations/registry.ts`
+- `src/lib/ops/alerts.ts`
+- `src/lib/ota/conflicts.ts`
+- `src/lib/payments/index.ts`
+- `src/lib/performance/cache.ts`
+- `src/lib/plugins/registry.ts`
+- `src/lib/pms/availability.ts`
+- `src/lib/pms/cancellation-policy.ts`
+- `src/lib/rbac-matrix.ts`
+- `src/lib/reliability/metrics.js`
+- `src/lib/reliability/sweep.js`
+- `src/lib/saas/usage.ts`
+- `src/lib/security/access-policies.ts`
+- `src/lib/security/rate-limit.ts`
+- `src/lib/security/staff-link.ts`
+- `src/lib/security/webhook.ts`
+- `src/lib/supabase/client.ts`
+- `src/lib/supabase/server.ts`
+- `src/lib/utils.ts`
+- `src/lib/validation.ts`
+- `src/middleware.ts`
+- `src/types/index.ts`
+- `supabase/migrations/00001_initial_schema.sql`
+- `supabase/migrations/00002_production_saas_hardening.sql`
+- `supabase/migrations/00003_team_audit_improvements.sql`
+- `supabase/migrations/00004_hotel_gallery_and_branding.sql`
+- `supabase/migrations/00005_guest_portal.sql`
+- `supabase/migrations/00006_performance_indexes.sql`
+- `supabase/migrations/00006_production_readiness_core.sql`
+- `supabase/migrations/00007_phase10.sql`
+- `supabase/migrations/00007_phase1_closure.sql`
+- `supabase/migrations/00008_phase2_revenue_compliance.sql`
+- `supabase/migrations/20260505053000_phase3_operations_events.sql`
+- `supabase/migrations/20260505070000_phase4_revenue_features.sql`
+- `supabase/migrations/20260505070000_phase7_go_live.sql`
+- `supabase/migrations/20260505080000_phase5_automation_ai_ota.sql`
+- `supabase/migrations/20260505090000_phase6_launch_hardening.sql`
+- `supabase/migrations/20260505093000_phase8_growth_scale_closure.sql`
+- `supabase/migrations/20260506000000_phase11_pms_core_ops.sql`
+- `supabase/migrations/20260506010000_phase12_saas_control_integrations.sql`
+- `supabase/migrations/20260508090000_p3_reliability_dlq.sql`
+- `supabase/migrations/20260508100000_p3_multi_property_foundation.sql`
+- `supabase/migrations/20260508103000_p3_chain_inventory_views.sql`
+- `tailwind.config.js`
+- `tests/core-ops.test.mjs`
+- `tests/e2e/booking-flow.spec.ts`
+- `tests/e2e/payment-flow.spec.ts`
+- `tests/e2e/production-flow.test.mjs`
+- `tests/e2e/tenant-isolation.spec.ts`
+- `tests/final-hardening.test.mjs`
+- `tests/load/k6-config.js`
+- `tests/reality-check.test.mjs`
+- `tests/saas-integrations.test.mjs`
+- `tests/unit/ai-assistant.test.mjs`
+- `tests/unit/availability-lock-guards.test.mjs`
+- `tests/unit/cancellation-policy.test.ts`
+- `tests/unit/core-policy.test.mjs`
+- `tests/unit/feature-gate.test.ts`
+- `tests/unit/reliability-metrics.test.mjs`
+- `tests/unit/reliability-sweep-policy.test.mjs`
+- `tsconfig.json`
+- `vercel.json`

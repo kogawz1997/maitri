@@ -1,0 +1,19 @@
+
+> maitri-pms@0.3.0 deploy:check
+> node scripts/check-deploy-targets.mjs
+
+✅ Dockerfile
+✅ .dockerignore
+✅ docker-compose.yml
+✅ railway.json
+✅ nixpacks.toml
+✅ fly.toml
+✅ koyeb.yaml
+✅ ecosystem.config.cjs
+✅ deploy/render.yaml
+✅ deploy/nginx.conf
+✅ scripts/deploy-local.sh
+✅ scripts/deploy-local.ps1
+✅ .github/workflows/deploy-check.yml
+✅ docs/DEPLOYMENT_MATRIX.md
+✅ Deploy target toolkit checks passed

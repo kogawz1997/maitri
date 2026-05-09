@@ -1,0 +1,9 @@
+{
+  "releaseHealth": true,
+  "rules": [
+    { "name": "API 5xx spike", "query": "event.type:error transaction:/api/*", "threshold": 5, "windowMinutes": 5 },
+    { "name": "Payment failures", "query": "payment failed OR webhook payment", "threshold": 1, "windowMinutes": 10 },
+    { "name": "OTA sync failures", "query": "ota sync failed", "threshold": 3, "windowMinutes": 15 },
+    { "name": "Client error burst", "query": "client-error", "threshold": 10, "windowMinutes": 15 }
+  ]
+}

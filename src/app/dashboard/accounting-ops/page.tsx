@@ -1,0 +1,1 @@
+export default function AccountingOpsPage(){return <div className='p-6 space-y-2'><h1 className='text-2xl font-semibold'>Accounting Ops</h1><p className='text-sm text-muted-foreground'>ตรวจสอบใบแจ้งหนี้ ค้างชำระ และ reconciliation ประจำวัน</p></div>;}

@@ -1,0 +1,12 @@
+
+> maitri-pms@0.3.0 security-check
+> node scripts/security-audit.mjs
+
+
+🔐 Security Audit
+
+Critical Issues: 0
+
+Warnings: 0
+
+✅ No critical security issues found

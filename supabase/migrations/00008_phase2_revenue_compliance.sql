@@ -1,0 +1,18 @@
+ALTER TABLE organizations ADD COLUMN IF NOT EXISTS stripe_customer_id TEXT, ADD COLUMN IF NOT EXISTS stripe_subscription_id TEXT, ADD COLUMN IF NOT EXISTS billing_email TEXT, ADD COLUMN IF NOT EXISTS suspended_at TIMESTAMPTZ, ADD COLUMN IF NOT EXISTS suspension_reason TEXT, ADD COLUMN IF NOT EXISTS billing_metadata JSONB DEFAULT '{}';
+CREATE UNIQUE INDEX IF NOT EXISTS organizations_stripe_customer_unique ON organizations(stripe_customer_id) WHERE stripe_customer_id IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS organizations_stripe_subscription_unique ON organizations(stripe_subscription_id) WHERE stripe_subscription_id IS NOT NULL;
+CREATE TABLE IF NOT EXISTS subscription_events (id UUID PRIMARY KEY DEFAULT uuid_generate_v4(), organization_id UUID REFERENCES organizations(id) ON DELETE CASCADE, provider TEXT NOT NULL DEFAULT 'stripe', provider_event_id TEXT UNIQUE, event_type TEXT NOT NULL, status TEXT, payload JSONB DEFAULT '{}', created_at TIMESTAMPTZ DEFAULT NOW());
+ALTER TABLE subscription_events ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS subscription_events_same_org_select ON subscription_events;
+CREATE POLICY subscription_events_same_org_select ON subscription_events FOR SELECT USING (organization_id = auth.user_organization_id());
+CREATE INDEX IF NOT EXISTS subscription_events_org_created_idx ON subscription_events(organization_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS audit_logs_hotel_created_idx ON audit_logs(hotel_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS audit_logs_entity_idx ON audit_logs(entity_type, entity_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS payments_gateway_tx_status_idx ON payments(gateway, gateway_transaction_id, status) WHERE gateway_transaction_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS invoices_hotel_issue_date_idx ON invoices(hotel_id, issue_date DESC);
+CREATE INDEX IF NOT EXISTS privacy_requests_email_created_idx ON privacy_requests(lower(email), created_at DESC);
+CREATE TABLE IF NOT EXISTS backup_runs (id UUID PRIMARY KEY DEFAULT uuid_generate_v4(), provider TEXT NOT NULL DEFAULT 'supabase', status TEXT NOT NULL CHECK (status IN ('started','completed','failed')), backup_url TEXT, checksum TEXT, size_bytes BIGINT, error TEXT, started_at TIMESTAMPTZ DEFAULT NOW(), finished_at TIMESTAMPTZ);
+ALTER TABLE backup_runs ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS backup_runs_owner_admin_select ON backup_runs;
+CREATE POLICY backup_runs_owner_admin_select ON backup_runs FOR SELECT USING (EXISTS (SELECT 1 FROM user_profiles p WHERE p.id = auth.uid() AND p.role IN ('owner','admin') AND p.active = true));
+CREATE INDEX IF NOT EXISTS backup_runs_status_started_idx ON backup_runs(status, started_at DESC);

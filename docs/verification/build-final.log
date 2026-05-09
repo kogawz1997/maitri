@@ -1,0 +1,281 @@
+
+> maitri-pms@0.3.0 prebuild
+> node scripts/ensure-next-installed.mjs
+
+✅ Next.js dependency is installed.
+
+> maitri-pms@0.3.0 build
+> next build
+
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+   ▲ Next.js 15.5.9
+   - Experiments (use with caution):
+     · cpus: 1
+     ✓ webpackMemoryOptimizations
+     · staticGenerationMaxConcurrency: 1
+     · staticGenerationMinPagesPerWorker: 5
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 26.7s
+   Skipping linting
+   Checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/146) ...
+   Generating static pages (36/146) 
+   Generating static pages (72/146) 
+   Generating static pages (109/146) 
+ ✓ Generating static pages (146/146)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                   Size  First Load JS
+┌ ○ /                                        630 B         106 kB
+├ ○ /_not-found                              509 B         102 kB
+├ ƒ /admin                                 4.18 kB         132 kB
+├ ƒ /admin/errors                            509 B         102 kB
+├ ƒ /admin/login                             895 B         185 kB
+├ ƒ /admin/orgs/[id]                         205 B         105 kB
+├ ƒ /api/accounting/exports                  509 B         102 kB
+├ ƒ /api/admin/ai/assist                     509 B         102 kB
+├ ƒ /api/admin/errors                        509 B         102 kB
+├ ƒ /api/admin/impersonate                   509 B         102 kB
+├ ƒ /api/admin/multi-property/inventory      509 B         102 kB
+├ ƒ /api/admin/multi-property/summary        509 B         102 kB
+├ ƒ /api/admin/orgs                          509 B         102 kB
+├ ƒ /api/admin/orgs/[id]/impersonate         509 B         102 kB
+├ ƒ /api/admin/orgs/[id]/usage               509 B         102 kB
+├ ƒ /api/admin/usage                         509 B         102 kB
+├ ƒ /api/ai/concierge                        509 B         102 kB
+├ ƒ /api/ai/dynamic-pricing                  509 B         102 kB
+├ ƒ /api/ai/p8-reply                         509 B         102 kB
+├ ƒ /api/ai/send-message                     509 B         102 kB
+├ ƒ /api/ai/suggest-reply                    509 B         102 kB
+├ ƒ /api/analytics/advanced                  509 B         102 kB
+├ ƒ /api/analytics/summary                   509 B         102 kB
+├ ƒ /api/auth/logout                         509 B         102 kB
+├ ƒ /api/auth/setup-organization             509 B         102 kB
+├ ƒ /api/automation/rules                    509 B         102 kB
+├ ƒ /api/automation/run                      509 B         102 kB
+├ ƒ /api/billing/checkout                    509 B         102 kB
+├ ƒ /api/billing/portal                      509 B         102 kB
+├ ƒ /api/billing/webhook                     509 B         102 kB
+├ ƒ /api/bookings/quote                      509 B         102 kB
+├ ƒ /api/channels/line/connect               509 B         102 kB
+├ ƒ /api/compliance/etax                     509 B         102 kB
+├ ƒ /api/compliance/export                   509 B         102 kB
+├ ƒ /api/compliance/tm30                     509 B         102 kB
+├ ƒ /api/compliance/tm30/export              509 B         102 kB
+├ ƒ /api/cron/abandoned-booking-recovery     509 B         102 kB
+├ ƒ /api/cron/billing-reconcile              509 B         102 kB
+├ ƒ /api/cron/billing-retry                  509 B         102 kB
+├ ƒ /api/cron/daily-summary                  509 B         102 kB
+├ ƒ /api/cron/expire-pending                 509 B         102 kB
+├ ƒ /api/cron/night-audit                    509 B         102 kB
+├ ƒ /api/cron/no-show                        509 B         102 kB
+├ ƒ /api/cron/ota-sync                       509 B         102 kB
+├ ƒ /api/cron/post-stay                      509 B         102 kB
+├ ƒ /api/cron/pre-arrival                    509 B         102 kB
+├ ƒ /api/cron/reliability-sweep              509 B         102 kB
+├ ƒ /api/cron/tm30-reminder                  509 B         102 kB
+├ ƒ /api/cron/trial-expire                   509 B         102 kB
+├ ƒ /api/cron/trial-expiry                   509 B         102 kB
+├ ƒ /api/fb/menu                             509 B         102 kB
+├ ƒ /api/fb/orders                           509 B         102 kB
+├ ƒ /api/folio/charge                        509 B         102 kB
+├ ƒ /api/folio/split                         509 B         102 kB
+├ ƒ /api/folios/[id]/items                   509 B         102 kB
+├ ƒ /api/folios/[id]/merge                   509 B         102 kB
+├ ƒ /api/folios/[id]/payments/allocate       509 B         102 kB
+├ ƒ /api/folios/[id]/split                   509 B         102 kB
+├ ƒ /api/folios/[id]/tax-adjustment          509 B         102 kB
+├ ƒ /api/guest/auth/forgot-password          509 B         102 kB
+├ ƒ /api/guest/auth/login                    509 B         102 kB
+├ ƒ /api/guest/auth/register                 509 B         102 kB
+├ ƒ /api/guest/bookings                      509 B         102 kB
+├ ƒ /api/guest/bookings/[id]                 509 B         102 kB
+├ ƒ /api/guest/bookings/[id]/check-in        509 B         102 kB
+├ ƒ /api/guest/bookings/[id]/modify          509 B         102 kB
+├ ƒ /api/guest/bookings/[id]/receipt         509 B         102 kB
+├ ƒ /api/guest/bookings/[id]/upsells         509 B         102 kB
+├ ƒ /api/guest/delete-account                509 B         102 kB
+├ ƒ /api/guest/export                        509 B         102 kB
+├ ƒ /api/guest/loyalty                       509 B         102 kB
+├ ƒ /api/guest/notifications                 509 B         102 kB
+├ ƒ /api/guest/privacy/export                509 B         102 kB
+├ ƒ /api/guest/referrals                     509 B         102 kB
+├ ƒ /api/guest/reviews                       509 B         102 kB
+├ ƒ /api/guest/wishlist                      509 B         102 kB
+├ ƒ /api/health                              509 B         102 kB
+├ ƒ /api/housekeeping/tasks/[id]/complete    509 B         102 kB
+├ ƒ /api/housekeeping/tasks/[id]/start       509 B         102 kB
+├ ƒ /api/invoices/[id]/pdf                   509 B         102 kB
+├ ƒ /api/invoices/payment/[paymentId]        509 B         102 kB
+├ ƒ /api/invoices/pdf                        509 B         102 kB
+├ ƒ /api/iot                                 509 B         102 kB
+├ ƒ /api/localization/preferences            509 B         102 kB
+├ ƒ /api/loyalty                             509 B         102 kB
+├ ƒ /api/mobile-key                          509 B         102 kB
+├ ƒ /api/ops/alerts                          509 B         102 kB
+├ ƒ /api/ops/client-error                    509 B         102 kB
+├ ƒ /api/ops/go-live-check                   509 B         102 kB
+├ ƒ /api/ops/health                          509 B         102 kB
+├ ƒ /api/ops/metrics                         509 B         102 kB
+├ ƒ /api/ops/rate-limit-test                 509 B         102 kB
+├ ƒ /api/ops/readiness                       509 B         102 kB
+├ ƒ /api/ops/smoke-test                      509 B         102 kB
+├ ƒ /api/ota/connections                     509 B         102 kB
+├ ƒ /api/ota/process                         509 B         102 kB
+├ ƒ /api/ota/reconcile                       509 B         102 kB
+├ ƒ /api/ota/sync                            509 B         102 kB
+├ ƒ /api/ota/workers/agoda                   509 B         102 kB
+├ ƒ /api/ota/workers/airbnb                  509 B         102 kB
+├ ƒ /api/ota/workers/booking-com             509 B         102 kB
+├ ƒ /api/partners/integrations               509 B         102 kB
+├ ƒ /api/payments/charge                     509 B         102 kB
+├ ƒ /api/payments/deposit                    509 B         102 kB
+├ ƒ /api/payments/receipt                    509 B         102 kB
+├ ƒ /api/payments/reconcile                  509 B         102 kB
+├ ƒ /api/payments/refund                     509 B         102 kB
+├ ƒ /api/plugins/marketplace                 509 B         102 kB
+├ ƒ /api/promotions                          509 B         102 kB
+├ ƒ /api/public/availability                 509 B         102 kB
+├ ƒ /api/public/chat                         509 B         102 kB
+├ ƒ /api/public/price-calendar               509 B         102 kB
+├ ƒ /api/public/promo                        509 B         102 kB
+├ ƒ /api/public/search                       509 B         102 kB
+├ ƒ /api/public/v1/hotels                    509 B         102 kB
+├ ƒ /api/rates                               509 B         102 kB
+├ ƒ /api/reports/export                      509 B         102 kB
+├ ƒ /api/reservations                        509 B         102 kB
+├ ƒ /api/reservations/[id]                   509 B         102 kB
+├ ƒ /api/reservations/[id]/cancel-quote      509 B         102 kB
+├ ƒ /api/reservations/[id]/extend            509 B         102 kB
+├ ƒ /api/reservations/[id]/move-room         509 B         102 kB
+├ ƒ /api/reservations/[id]/no-show           509 B         102 kB
+├ ƒ /api/reservations/extend                 509 B         102 kB
+├ ƒ /api/reservations/move-room              509 B         102 kB
+├ ƒ /api/room-types/[id]/images              509 B         102 kB
+├ ƒ /api/spa/bookings                        509 B         102 kB
+├ ƒ /api/spa/services                        509 B         102 kB
+├ ƒ /api/storage/optimize                    509 B         102 kB
+├ ƒ /api/storage/upload                      509 B         102 kB
+├ ƒ /api/team                                509 B         102 kB
+├ ƒ /api/team/accept-invite                  509 B         102 kB
+├ ƒ /api/team/approve-account                509 B         102 kB
+├ ƒ /api/team/audit-trail                    509 B         102 kB
+├ ƒ /api/team/create-account                 509 B         102 kB
+├ ƒ /api/team/invite                         509 B         102 kB
+├ ƒ /api/team/members                        509 B         102 kB
+├ ƒ /api/team/staff-login-link               509 B         102 kB
+├ ƒ /api/team/staff-login-validate           509 B         102 kB
+├ ƒ /api/webhooks/agoda                      509 B         102 kB
+├ ƒ /api/webhooks/booking-com                509 B         102 kB
+├ ƒ /api/webhooks/events                     509 B         102 kB
+├ ƒ /api/webhooks/line                       509 B         102 kB
+├ ƒ /api/webhooks/omise                      509 B         102 kB
+├ ƒ /api/webhooks/stripe                     509 B         102 kB
+├ ƒ /api/webhooks/whatsapp                   509 B         102 kB
+├ ○ /auth/accept-invite                    3.42 kB         184 kB
+├ ○ /auth/forgot-password                  2.37 kB         180 kB
+├ ○ /auth/login                              509 B         102 kB
+├ ○ /auth/login/owner                        901 B         185 kB
+├ ○ /auth/login/staff                        889 B         185 kB
+├ ○ /auth/reset-password                   3.03 kB         180 kB
+├ ○ /auth/signup                           4.54 kB         189 kB
+├ ○ /backoffice/login                      1.55 kB         186 kB
+├ ƒ /booking/[slug]                        16.4 kB         207 kB
+├ ƒ /booking/[slug]/failed                   205 B         105 kB
+├ ƒ /booking/[slug]/pending                  205 B         105 kB
+├ ƒ /booking/[slug]/success                  205 B         105 kB
+├ ƒ /booking/preview                       4.98 kB         117 kB
+├ ƒ /dashboard                             3.02 kB         124 kB
+├ ƒ /dashboard/accounting                    128 B         113 kB
+├ ƒ /dashboard/accounting-ops                509 B         102 kB
+├ ƒ /dashboard/ai-concierge                  509 B         102 kB
+├ ƒ /dashboard/analytics                     128 B         113 kB
+├ ƒ /dashboard/audit                       8.26 kB         201 kB
+├ ƒ /dashboard/audit-trail                   535 B         102 kB
+├ ƒ /dashboard/automation                    509 B         102 kB
+├ ƒ /dashboard/billing                      3.3 kB         112 kB
+├ ƒ /dashboard/branding                    8.25 kB         204 kB
+├ ƒ /dashboard/channels                    9.72 kB         202 kB
+├ ƒ /dashboard/channels/line-setup         4.32 kB         126 kB
+├ ƒ /dashboard/concierge                     509 B         102 kB
+├ ƒ /dashboard/fb                          4.31 kB         118 kB
+├ ƒ /dashboard/fb/menu                     7.86 kB         200 kB
+├ ƒ /dashboard/fb/orders                   4.24 kB         201 kB
+├ ƒ /dashboard/go-live                     1.53 kB         103 kB
+├ ƒ /dashboard/guests                        133 B         116 kB
+├ ƒ /dashboard/guests/[id]                 7.43 kB         213 kB
+├ ƒ /dashboard/housekeeping                3.69 kB         201 kB
+├ ƒ /dashboard/housekeeping/mobile           509 B         102 kB
+├ ƒ /dashboard/inbox                       11.4 kB         198 kB
+├ ƒ /dashboard/integrations                  509 B         102 kB
+├ ƒ /dashboard/iot                         9.07 kB         127 kB
+├ ƒ /dashboard/knowledge                   9.59 kB         202 kB
+├ ƒ /dashboard/launch                      1.29 kB         103 kB
+├ ƒ /dashboard/localization                 2.2 kB         104 kB
+├ ƒ /dashboard/loyalty                       133 B         116 kB
+├ ƒ /dashboard/maintenance                 3.82 kB         211 kB
+├ ƒ /dashboard/maintenance/tech              509 B         102 kB
+├ ƒ /dashboard/marketing                    9.4 kB         212 kB
+├ ƒ /dashboard/marketing/promos            4.13 kB         139 kB
+├ ƒ /dashboard/menu                          133 B         116 kB
+├ ƒ /dashboard/ota                           509 B         102 kB
+├ ƒ /dashboard/permission-simulator          786 B         103 kB
+├ ƒ /dashboard/pricing                     4.73 kB         127 kB
+├ ƒ /dashboard/rates                       7.57 kB         135 kB
+├ ƒ /dashboard/rbac                          509 B         102 kB
+├ ƒ /dashboard/reports                     16.1 kB         310 kB
+├ ƒ /dashboard/reservations                12.4 kB         214 kB
+├ ƒ /dashboard/revenue                     8.02 kB         237 kB
+├ ƒ /dashboard/rooms                       4.33 kB         202 kB
+├ ƒ /dashboard/rooms/qr                     8.5 kB         117 kB
+├ ƒ /dashboard/security                      509 B         102 kB
+├ ƒ /dashboard/settings                    6.78 kB         205 kB
+├ ƒ /dashboard/setup                       11.4 kB         120 kB
+├ ƒ /dashboard/spa                         4.03 kB         118 kB
+├ ƒ /dashboard/spa/bookings                3.38 kB         210 kB
+├ ƒ /dashboard/spa/services                7.92 kB         201 kB
+├ ƒ /dashboard/system                        15 kB         133 kB
+├ ƒ /dashboard/team                        9.82 kB         143 kB
+├ ƒ /dashboard/team/approvals                765 B         112 kB
+├ ƒ /dashboard/team/create-user             1.5 kB         116 kB
+├ ƒ /destinations/[city]                     205 B         105 kB
+├ ƒ /h/[slug]                              4.97 kB         189 kB
+├ ƒ /h/[slug]/opengraph-image                509 B         102 kB
+├ ƒ /hotels/[slug]                           509 B         102 kB
+├ ○ /mobile                                  205 B         105 kB
+├ ○ /mobile/guest                            205 B         105 kB
+├ ○ /mobile/housekeeping                     205 B         105 kB
+├ ○ /mobile/owner-analytics                  205 B         105 kB
+├ ○ /offline                                 680 B         103 kB
+├ ƒ /onboarding                            6.32 kB         180 kB
+├ ○ /opengraph-image                         509 B         102 kB
+├ ƒ /portal/bookings                        7.4 kB         201 kB
+├ ○ /portal/bookings/qr                     3.9 kB         189 kB
+├ ○ /portal/forgot-password                1.32 kB         107 kB
+├ ○ /portal/keys                           3.12 kB         118 kB
+├ ○ /portal/login                          3.19 kB         118 kB
+├ ○ /portal/loyalty                        1.17 kB         103 kB
+├ ƒ /portal/profile                        3.93 kB         181 kB
+├ ○ /portal/referrals                      1.25 kB         112 kB
+├ ○ /portal/reset-password                  3.1 kB         181 kB
+├ ƒ /portal/wishlist                       3.16 kB         124 kB
+├ ○ /privacy                                 205 B         105 kB
+├ ○ /robots.txt                              509 B         102 kB
+├ ƒ /room/[code]                           4.55 kB         113 kB
+├ ○ /search                                8.21 kB         199 kB
+├ ○ /sitemap.xml                             509 B         102 kB
+└ ○ /terms                                   205 B         105 kB
++ First Load JS shared by all               102 kB
+  ├ chunks/1255-8befde0980f5cba9.js        45.6 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js    54.2 kB
+  └ other shared chunks (total)            1.98 kB
+
+
+ƒ Middleware                               87.9 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
